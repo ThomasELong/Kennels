@@ -1,4 +1,5 @@
 import React from "react"
+import "./Kennel.css"
 
 import AnimalList from "./animal/AnimalList"
 import { AnimalProvider } from "./animal/AnimalProvider"
@@ -37,9 +38,10 @@ export default () => (
             <CustomerList />
         </CustomerProvider>
 
-        <h2>Employees</h2>
         <EmployeeProvider>
-            <EmployeeList />
+            <LocationProvider>
+                <EmployeeList />
+            </LocationProvider>
         </EmployeeProvider>
 
         <h2>Locations</h2>
