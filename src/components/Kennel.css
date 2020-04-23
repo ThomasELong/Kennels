@@ -62,3 +62,9 @@ address {
   display: flex;
   justify-content: center;
 }
+
+.animalHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

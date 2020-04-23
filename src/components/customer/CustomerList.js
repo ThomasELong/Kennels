@@ -9,6 +9,7 @@ export default () => {
     return (
         <>
         <h2 className="title">Customers</h2>
+        
         <div className="customers ">
         {
             customers.map(cust => <Customer key={cust.id} customer={cust} />)
