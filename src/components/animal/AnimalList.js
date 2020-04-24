@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { AnimalContext } from "./AnimalProvider"
 import { LocationContext } from "../location/LocationProvider"
 import { CustomerContext } from "../customer/CustomerProvider"
 import { Button, Modal, ModalBody, ModalHeader } from "reactstrap"
+import AnimalForm from "./AnimalForm"
 import Animal from "./Animal"
 import "./Animals.css"
-import AnimalForm from "./AnimalForm"
 
 export default () => {
     const { animals } = useContext(AnimalContext)
@@ -19,6 +19,7 @@ export default () => {
     return (
         <>
         <div className="title animalHeader">
+
             <h2 className="title">Animals</h2>
             <Button onClick={() => {
                 const userId = localStorage.getItem("kennel_customer")
@@ -26,9 +27,10 @@ export default () => {
                     toggle()
                 }
             }}>Make Appointment</Button>
+
         </div>
-        <div className="animals">
-            
+
+        <div className="animals">    
         {
             animals.map(ani => {
             const owner = customers.find(cust => cust.id === ani.customerId)
@@ -53,3 +55,4 @@ export default () => {
         </>
     )
 }
+
